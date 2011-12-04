@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+  %script{:type => "text/javascript"}
+    setTimeout( function() { window.location.reload(); }, 5000 )
+  %body
+    %table
+      %tr
+      - @chat_log.each do |log|
+        %td= log[:post_time]
+        %td= log[:member]
+        %td >
+        %td= log[:text]
+        %tr

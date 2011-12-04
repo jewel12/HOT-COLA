@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title= @title
+    %link{:rel=>"stylesheet", :type=>"text/css", :href=>"/style.css"}
+    %script{:type => "text/javascript"}
+      function clear_input( form ) { form.submit(); setTimeout( function() { form.reset(); }, 100 ) };
+      function check_enkey_pressed() {
+      if( window.event.keyCode == 13 ){
+      clear_input( document.chat );
+      }
+      };
+  %body
+    %div#caller
+      %p 何か御用でしたら連打してください。たぶんかけつけます。
+      %form{:action => "/call", :method => "post", :target => "frame"}
+        %button#button{:type => "submit"} PushMe!
+      %iframe{:name => "frame", :style => "display:none"}
+    %div#chat
+      %form{:name => "chat", :action => "/chat", :method => "post", :target => "chat_frame"}
+        %input{:size => 70, :type => "input", :name => "content", :onkeypress => "check_enkey_pressed();"}
+        %input{:type => "button", :value => "Post", :onclick => "clear_input(this.form);"}
+      %iframe{:name => "chat_frame", :id => "chat", :src => "/chat"}
