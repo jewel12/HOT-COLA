@@ -1,8 +1,8 @@
-# = HOT-COLA
-#
-# 何かあったら呼び出して欲しいとき、ボタンを押してもらうことで notify-send による通知が表示されます。
-# 簡易チャット機能付き。
-#
-# == Usage
-# [メンバーの追加] config/members.yaml に利用を許可するIPアドレスを記述する。members_example.yaml 参照。
-# [実行] _ruby app.rb_
+= HOT-COLA
+
+何かあったら呼び出して欲しいとき、ボタンを押してもらうことで notify-send による通知が表示されます。
+簡易チャット機能付き。
+
+== Usage
+[メンバーの追加] config/members.yaml に利用を許可するIPアドレスを記述する。members_example.yaml 参照。
+[実行] _ruby app.rb_
